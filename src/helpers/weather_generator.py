@@ -48,9 +48,10 @@ class WeatherGenerator:
 
     def read_data(self, file_name='data/weather_data.csv'):
         self.weather_data = pd.read_csv(file_name, index_col=0)
-        print(self.weather_data)
-
-    def get_hourly_data(self):
         if self.weather_data is None:
             raise ValueError('Weather data not generated yet.')
         return self.weather_data
+
+    def print_data(self):
+        self.weather_data = self.read_data()
+        print(self.weather_data)

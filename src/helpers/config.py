@@ -27,3 +27,6 @@ def get_weather_data_headers():
 
 def get_temperature_header():
     return config.get('weather', 'temperature_header')
+
+def get_wind_speed_header():
+    return config.get('weather', 'wind_speed_header')
