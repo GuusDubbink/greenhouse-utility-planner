@@ -35,17 +35,6 @@ The model requires the following input variables:
 7. `ventilation sources`: selection of ventilation sources
 8. `irrigation sources`: selection of irrigation sources
 
-[//]: # (9. `heat demand`: heat demand of the greenhouse)
-
-[//]: # (10. `cooling demand`: cooling demand of the greenhouse)
-
-[//]: # (11. `lighting demand`: lighting demand of the greenhouse)
-
-[//]: # (12. `ventilation demand`: ventilation demand of the greenhouse)
-
-[//]: # (13. `irrigation demand`: irrigation demand of the greenhouse)
-
-
 ### Model constants and parameters
 The model has the following constants:
  - `solar irradiation`: hourly distribution of solar irradiation in W/m²
@@ -93,3 +82,5 @@ The model is structured as follows:
 ## Contributing
 
 
+## Chat GPT
+Can you write a set of Python scripts for the model described below? Please also propose a project structure for the scripts. 
