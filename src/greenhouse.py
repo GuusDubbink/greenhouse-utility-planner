@@ -1,3 +1,5 @@
+import json
+
 class Greenhouse:
     def __init__(self, location="Rotterdam", area=1000, crop="tomato", greenhouse_type="glass"):
         self.location = location
@@ -12,6 +14,26 @@ class Greenhouse:
         self.crop_yield = []
         self.crop_production = []
         self.revenue = []
+
+    def calculate_co2_demand(self):
+        """
+        Calculates the hourly CO2 demand of a greenhouse for a specific crop, based on
+        the crop type and area.
+        """
+        # Load CO2 demand from JSON file
+        with open('data/crops.json') as f:
+            co2_demand = json.load(f)
+
+        # Get the CO2 demand for the specified crop type
+        if self.crop in co2_demand:
+            co2_per_sqm_per_hour = co2_demand[self.crop]['co2_demand'] # unit: kg CO2 per m2 per hour
+        else:
+            raise ValueError(f"CO2 demand for {self.crop} is not defined in the CO2 demand file.")
+
+        # Calculate the hourly CO2 demand based on crop area
+        co2_demand_hourly = self.area * co2_per_sqm_per_hour
+
+        return co2_demand_hourly
 
     def calculate_demand(self, solar_irradiation, temperature, humidity, wind_speed, operation_schedule):
         # Calculate demand for heat, cooling, lighting, ventilation, and irrigation

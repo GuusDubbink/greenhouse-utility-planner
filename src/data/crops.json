@@ -1,0 +1,20 @@
+{
+    "tomatoes": {
+        "heat_demand": 100,
+        "electricity_demand": 100,
+        "irrigation_demand": 100,
+        "co2_demand": 0.5
+    },
+    "strawberries": {
+        "heat_demand": 80,
+        "electricity_demand": 100,
+        "irrigation_demand": 100,
+        "co2_demand": 0.5
+    },
+    "cucumbers": {
+        "heat_demand": 120,
+        "electricity_demand": 100,
+        "irrigation_demand": 100,
+        "co2_demand": 0.5
+    }
+}
